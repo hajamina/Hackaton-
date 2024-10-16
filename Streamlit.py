@@ -128,7 +128,7 @@ st.markdown('<hr style="border:1px solid black;">', unsafe_allow_html=True)
 # In[125]:
 
 
-pip install openpyxl
+#pip install openpyxl
 
 
 # In[126]:
@@ -323,22 +323,4 @@ De bovenstaande dataset met schattingen per bedrijf is in Python gebruikt om met
 """)
 last = pd.read_excel('hoop.xlsx')
 st.dataframe(last)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
