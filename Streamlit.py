@@ -311,11 +311,11 @@ st.dataframe(df)
 st.markdown('<hr style="border:1px solid black;">', unsafe_allow_html=True)
 
 
-# In[130]:
+# In[139]:
 
 
 st.markdown(
-    '<p style="color:red; font-size: 22px; font-weight: bold;">Weergave datset met KWh per bedrijf gedurend het jaar 3034 </p>',
+    '<p style="color:red; font-size: 22px; font-weight: bold;">Weergave datset met KWh per bedrijf gedurend het jaar 2024 </p>',
     unsafe_allow_html=True
 )
 st.write("""
@@ -323,4 +323,10 @@ De bovenstaande dataset met schattingen per bedrijf is in Python gebruikt om met
 """)
 last = pd.read_excel('hoop.xlsx')
 st.dataframe(last)
+
+
+# In[ ]:
+
+
+
 
