@@ -125,7 +125,13 @@ st.markdown('<hr style="border:1px solid black;">', unsafe_allow_html=True)
 
 
 
-# In[102]:
+# In[125]:
+
+
+pip install openpyxl
+
+
+# In[126]:
 
 
 st.markdown(
@@ -206,7 +212,7 @@ st.markdown('<hr style="border:1px solid black;">', unsafe_allow_html=True)
 
 
 
-# In[ ]:
+# In[127]:
 
 
 st.markdown(
@@ -222,7 +228,7 @@ st.image('Scherm­afbeelding 2024-10-16 om 11.24.13.png', caption='Relatieve ver
 
 
 
-# In[114]:
+# In[128]:
 
 
 import streamlit as st
@@ -289,7 +295,7 @@ st.markdown('<hr style="border:1px solid black;">', unsafe_allow_html=True)
 
 
 
-# In[119]:
+# In[129]:
 
 
 st.markdown(
@@ -305,7 +311,7 @@ st.dataframe(df)
 st.markdown('<hr style="border:1px solid black;">', unsafe_allow_html=True)
 
 
-# In[121]:
+# In[130]:
 
 
 st.markdown(
@@ -317,6 +323,18 @@ De bovenstaande dataset met schattingen per bedrijf is in Python gebruikt om met
 """)
 last = pd.read_excel('hoop.xlsx')
 st.dataframe(last)
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
