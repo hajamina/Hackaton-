@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[98]:
+# In[153]:
 
 
 import streamlit as st
@@ -31,7 +31,7 @@ st.markdown("""
         font-family: 'Arial', sans-serif;  /* Je kunt het lettertype hier veranderen */
     }
     </style>
-    <h1 class="title">Analyse van Bestelauto's en KWh-Behoefte op Sloterdijk Noord Poort</h1>
+    <h1 class="title">Voorspellen aantal Bestelauto's en KWh-Behoefte op Sloterdijk Noord Poort</h1>
     """, unsafe_allow_html=True)
 
 st.write("""
@@ -125,13 +125,13 @@ st.markdown('<hr style="border:1px solid black;">', unsafe_allow_html=True)
 
 
 
-# In[125]:
+# In[155]:
 
 
 #pip install openpyxl
 
 
-# In[126]:
+# In[157]:
 
 
 st.markdown(
@@ -212,7 +212,7 @@ st.markdown('<hr style="border:1px solid black;">', unsafe_allow_html=True)
 
 
 
-# In[127]:
+# In[159]:
 
 
 st.markdown(
@@ -226,12 +226,6 @@ In deze analyse hebben we de laadtijden van de bedrijven op Sloterdijk Noord Poo
 st.image('Scherm­afbeelding 2024-10-16 om 11.24.13.png', caption='Relatieve verkeersintensiteit bestelauto’s op Nederlandse wegen (gemiddeld)-bron kentekenscans TNO')
 
 
-
-
-# In[128]:
-
-
-import streamlit as st
 
 st.markdown('<p style="color:green;"><strong>Inschatting laadmomenten per sector</strong></p>', unsafe_allow_html=True)
 
@@ -293,11 +287,6 @@ with st.expander("Overige Dienstverlening (Klik hier voor details)"):
 st.write("Klik op een sector voor meer informatie over de logistieke planning en het waarom achter bepaalde tijdsvensters.")
 st.markdown('<hr style="border:1px solid black;">', unsafe_allow_html=True)
 
-
-
-# In[129]:
-
-
 st.markdown(
     '<p style="color:red; font-size: 22px; font-weight: bold;">Weergave gemaakte inschattingen per Bedrijf</p>',
     unsafe_allow_html=True
@@ -309,11 +298,6 @@ df = pd.read_excel('new.xlsx')
 st.dataframe(df)
 
 st.markdown('<hr style="border:1px solid black;">', unsafe_allow_html=True)
-
-
-# In[139]:
-
-
 st.markdown(
     '<p style="color:red; font-size: 22px; font-weight: bold;">Weergave datset met KWh per bedrijf gedurend het jaar 2024 </p>',
     unsafe_allow_html=True
@@ -321,8 +305,9 @@ st.markdown(
 st.write("""
 De bovenstaande dataset met schattingen per bedrijf is in Python gebruikt om met behulp van code voor elk uur van het jaar te berekenen hoeveel energie elk bedrijf nodig heeft om hun bestelauto's op te laden, rekening houdend met de laadtijden en het seizoen.
 """)
-last = pd.read_excel('hoop.xlsx')
+last = pd.read_excel('last.xlsx')
 st.dataframe(last)
+
 
 
 # In[ ]:
