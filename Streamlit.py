@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[153]:
+# In[161]:
 
 
 import streamlit as st
@@ -125,13 +125,13 @@ st.markdown('<hr style="border:1px solid black;">', unsafe_allow_html=True)
 
 
 
-# In[155]:
+# In[162]:
 
 
 #pip install openpyxl
 
 
-# In[157]:
+# In[163]:
 
 
 st.markdown(
@@ -212,7 +212,7 @@ st.markdown('<hr style="border:1px solid black;">', unsafe_allow_html=True)
 
 
 
-# In[159]:
+# In[167]:
 
 
 st.markdown(
@@ -307,6 +307,98 @@ De bovenstaande dataset met schattingen per bedrijf is in Python gebruikt om met
 """)
 last = pd.read_excel('last.xlsx')
 st.dataframe(last)
+
+
+
+# In[178]:
+
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+
+st.markdown("""
+    <style>
+    .title {
+        text-align: center;
+        font-size: 40px;
+        color: #0A1172;  /* Donkerblauwe kleur */
+        font-family: 'Arial', sans-serif;  /* Je kunt het lettertype hier veranderen */
+    }
+    </style>
+    <h1 class="title">Energieverbruik panden per Bedrijf - Dutch Fresh Port</h1>
+    """, unsafe_allow_html=True)
+
+# Titel en beschrijving
+st.markdown("""
+    <style>
+    .title {
+        text-align: center;
+        font-size: 40px;
+        color: #0A1172;  /* Donkerblauwe kleur */
+        font-family: 'Arial', sans-serif;
+    }
+    </style>
+    <h1 class="title">Energieverbruik per Bedrijf - Dutch Fresh Port</h1>
+    """, unsafe_allow_html=True)
+
+st.write("""
+    Welkom bij onze analyse van het energieverbruik van bedrijven op Dutch Fresh Port. Dit bedrijventerrein speelt een cruciale rol in de Nederlandse voedingsmiddelenindustrie, met een focus op de distributie van verse producten. 
+    In deze app presenteren we het energieverbruik per bedrijf op basis van gegevens zoals het aantal werknemers, sector en gemiddelde dagelijkse elektriciteitsbehoefte (in KWh). Het doel van deze analyse is om inzicht te geven in de energiebehoeften van bedrijven, wat belangrijk is voor het plannen van duurzame energievoorziening en optimalisatie van energieverbruik.
+""")
+
+st.markdown("<hr style='border: 3px solid darkblue;'>", unsafe_allow_html=True)
+
+# Deel 1: Laad de dataset met KWh per bedrijf
+st.markdown('<p style="color:red; font-size: 22px; font-weight: bold;">Weergave KWh per Bedrijf in Dutch Fresh Port</p>', unsafe_allow_html=True)
+
+# Creëer een voorbeeld dataframe voor bedrijven in Dutch Fresh Port
+bedrijven_data = {
+    'Bedrijf': ['4 Fruit Company', 'Fruit Queen B.V.', 'Frukar B.V.', 'Frutyco B.V.', 'Hoofdman & Roodzand B.V.'],
+    'Sector': ['Groente/Fruit Handel(46.67%)', 'Groente/Fruit Handel(46.67%)', 'Groente/Fruit Handel(46.67%)', 
+               'Groente/Fruit Handel(46.67%)', 'Groente/Fruit Handel(46.67%)'],
+    'Aantal Werknemers': [30, 43, 20, 43, 50],
+    'Bezettingsgraad (%)': [65, 65, 65, 65, 85],
+    'Percentage Thuiswerkers (%)': [8.5, 8.5, 8.5, 8.5, 8.5],
+    'Verbruik per Werknemer (KWh)': [8.2, 8.2, 8.2, 8.2, 8.2],
+}
+
+bedrijven_df = pd.DataFrame(bedrijven_data)
+
+
+# Toon de dataframe met het energieverbruik per bedrijf
+st.dataframe(bedrijven_df)
+st.markdown('<hr style="border:1px solid black;">', unsafe_allow_html=True)
+
+
+# Deel 2: Berekeningen voor verbruik per uur gedurende een werkdag
+st.markdown('<p style="color:red; font-size: 22px; font-weight: bold;">Weergave KWh per Uur gedurende een Werkdag</p>', unsafe_allow_html=True)
+
+# Toon het energieverbruik per uur voor elk bedrijf
+Elektriciteitsverbruik_2024_per_bedrijf = pd.read_excel('Energieverbruik_2024_alle_bedrijven-2.xlsx')
+Elektriciteitsverbruik_2024_per_bedrijf = pd.DataFrame(Elektriciteitsverbruik_2024_per_bedrijf)
+st.dataframe(Elektriciteitsverbruik_2024_per_bedrijf)
+
+st.markdown('<hr style="border:1px solid black;">', unsafe_allow_html=True)
+
+st.markdown('<p style="color:red; font-size: 22px; font-weight: bold;">Weergave gasverbruik per Uur gedurende een Werkdag</p>', unsafe_allow_html=True)
+
+
+Gasverbruik_2024_per_bedrijf = pd.read_excel('Gasverbruik_2024_per_bedrijf.xlsx')
+Gasverbruik_2024_per_bedrijf = pd.DataFrame(Gasverbruik_2024_per_bedrijf)
+st.dataframe(Gasverbruik_2024_per_bedrijf)
+
+
+# In[ ]:
+
+
+
+
+
+
+# In[ ]:
+
+
 
 
 
