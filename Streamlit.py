@@ -310,7 +310,7 @@ st.dataframe(last)
 
 
 
-# In[178]:
+# In[180]:
 
 
 import streamlit as st
@@ -327,19 +327,6 @@ st.markdown("""
     }
     </style>
     <h1 class="title">Energieverbruik panden per Bedrijf - Dutch Fresh Port</h1>
-    """, unsafe_allow_html=True)
-
-# Titel en beschrijving
-st.markdown("""
-    <style>
-    .title {
-        text-align: center;
-        font-size: 40px;
-        color: #0A1172;  /* Donkerblauwe kleur */
-        font-family: 'Arial', sans-serif;
-    }
-    </style>
-    <h1 class="title">Energieverbruik per Bedrijf - Dutch Fresh Port</h1>
     """, unsafe_allow_html=True)
 
 st.write("""
